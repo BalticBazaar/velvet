@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+@media (max-width: 700px) {
+  .logo img {
+    height: 80px !important;
+  }
+}
+</style>
+</head>
+<body>
+    <!-- Top navigation bar -->
+    <div class="floating-block top-bar-block">
+    <header class="top-bar">
+            <div class="bar-inner">
+                <div class="logo"><img src="Velvet.png" alt="Velvet Logo" style="height:120px;vertical-align:middle;margin-top:6px;"><span class="accent" style="display:none;">Site</span></div>
+            <nav class="bar-actions">
+                <a href="#" class="action-btn">Стать партнёром</a>
+                    <button class="burger" aria-label="Открыть меню">
+                      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="6" width="32" height="4" rx="2" fill="#000"/>
+                        <rect y="14" width="32" height="4" rx="2" fill="#000"/>
+                        <rect y="22" width="32" height="4" rx="2" fill="#000"/>
+                      </svg>
+                    </button>
+            </nav>
+        </div>
+    </header>
+    </div>
+    <script>
+    // Sticky TopBar shadow on scroll
+    window.addEventListener('scroll', function() {
+      var topBar = document.querySelector('.floating-block.top-bar-block');
+      if (!topBar) return;
+      if (window.scrollY > 10) {
+        topBar.classList.add('scrolled');
+      } else {
+        topBar.classList.remove('scrolled');
+      }
+    });
+    </script>
+
+    <!-- Hero section -->
+    <div class="floating-block hero-block">
+        <div class="hero-bg">
+            <img src="invest-banner.png" alt="Investment illustration">
+        </div>
+        <div class="hero-card">
+            <h1>Инвестриуй в<br>приложение для города</h1>
+            <p>Стань партнёром нового мультифункционального приложения для города</p>
+            <p>Дополнительная информация <a href="tel:+78000000000">+7&nbsp;800&nbsp;000-00-00</a></p>
+            <a href="#legal" class="primary-btn">Инвестировать
+                <span class="btn-arrow" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M7 11H15M15 11L12 8M15 11L12 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+            </a>
+                <div class="chips">
+                <a href="#strategy" class="chip">Стратегия</a>
+                    <a href="#faq" class="chip">FAQ</a>
+                </div>
+            </div>
+    </div>
+
+    <!-- Блок преимуществ -->
+    <div class="floating-block features-block">
+      <h2 class="features-title">Преимущества</h2>
+      <div class="features-list">
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#fff"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#ff6200" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="feature-text">
+            <div class="feature-title">Латвийская юрисдикция</div>
+            <div class="feature-desc">Компания зарегистрирована в Латвии — это прозрачность, европейская правовая среда и дополнительные возможности для международного масштабирования.</div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#fff"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#ff6200" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="feature-text">
+            <div class="feature-title">Приложение уже готово</div>
+            <div class="feature-desc">Разработка завершена, инфраструктура запущена. Нужны инвестиции для масштабного выхода на рынок и активного маркетинга.</div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#fff"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#ff6200" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="feature-text">
+            <div class="feature-title">Сильная команда</div>
+            <div class="feature-desc">Опыт в логистике, IT и запуске стартапов. Мы знаем, как построить востребованный продукт и вывести его в прибыль.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Промо-блок (диван, коробки) -->
+    <div class="floating-block promo-block">
+      <div class="promo-inner">
+        <div class="promo-text">
+          <h2>Стань инвестором в своей стране</h2>
+          <p>Мы открыты для всех: инвестиции от 150 €</p>
+        </div>
+        <div class="promo-image">
+          <img src="donut-chart.png" alt="Инвестиции" style="max-width: 210px; width: 100%;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Стратегия (дубль блока преимуществ) -->
+    <div class="floating-block features-block" id="strategy">
+      <h2 class="features-title">Стратегия</h2>
+      <div class="features-list">
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#fff"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#ff6200" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="feature-text">
+            <div class="feature-title">1-й год</div>
+            <div class="feature-desc">Запуск и масштабирование в Латвии</div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#fff"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#ff6200" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="feature-text">
+            <div class="feature-title">2-й год</div>
+            <div class="feature-desc">Выход на Прибалтийский рынок</div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#fff"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#ff6200" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="feature-text">
+            <div class="feature-title">3-й год</div>
+            <div class="feature-desc">Консолидация и рост доли рынка</div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок выручки и комиссии -->
+    <div class="floating-block revenue-block">
+      <h2 class="revenue-title">Выручка и комиссия</h2>
+      <div class="revenue-note">
+        Часть этой прибыли могут заработать инвесторы — присоединяйтесь к проекту!
+      </div>
+      <div class="revenue-table-wrap">
+        <table class="revenue-table">
+          <thead>
+            <tr>
+              <th> </th>
+              <th>Грязная выручка</th>
+              <th>Комиссия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Год 1</td>
+              <td>1 875 826 €</td>
+              <td>468 957 €</td>
+            </tr>
+            <tr>
+              <td>Год 2</td>
+              <td>8 710 600 €</td>
+              <td>2 177 650 €</td>
+            </tr>
+            <tr>
+              <td>Год 3</td>
+              <td>11 323 780 €</td>
+              <td>2 830 945 €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="revenue-disclaimer">
+        *Представленные цифры — это прогнозные расчеты, основанные на текущей бизнес-модели. Фактическая выручка и комиссия могут варьироваться
+      </div>
+    </div>
+    <script>
+document.querySelectorAll('a[href^="#strategy"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.getElementById('strategy');
+    if (target) {
+      var y = target.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  });
+});
+document.querySelectorAll('a[href^="#faq"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.getElementById('faq');
+    if (target) {
+      var y = target.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  });
+});
+document.querySelectorAll('a[href^="#legal"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.getElementById('legal');
+    if (target) {
+      var y = target.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+    <!-- Юридическая информация для инвесторов -->
+    <div class="floating-block legal-block" id="legal">
+      <h2>Юридическая информация<br class="mobile-br"> для инвесторов</h2>
+      <div class="legal-details">
+        <strong>Реквизиты компании</strong><br>
+        Для осуществления инвестиций, пожалуйста, используйте следующие реквизиты.<br><br>
+        <b>Название компании:</b> SIA Velvet Delivery<br>
+        <b>Регистрационный номер:</b> 40203664266<br>
+        <b>Расчетный счет:</b> LT0000x0000000000000<br>
+        <b>Наименование банка:</b> Paysera UAB<br>
+        <b>БИК:</b> 000000000
+      </div>
+      <div class="legal-buttons">
+        <a href="#" class="legal-btn">Публичная оферта</a>
+        <a href="#" class="legal-btn">Шаблон договора</a>
+      </div>
+    </div>
+    <!-- FAQ блок с аккордеоном -->
+    <div class="floating-block faq-block" id="faq">
+      <h2 class="faq-title">Частые вопросы</h2>
+      <div class="faq-inner">
+        <div class="faq-categories">
+          <button class="faq-category active" data-faq="about">О проекте</button>
+          <button class="faq-category" data-faq="invest">Инвестиции</button>
+          <button class="faq-category" data-faq="finance">Финансы</button>
+        </div>
+        <div class="faq-accordion-list">
+          <!-- О проекте -->
+          <div class="faq-accordion-panel" data-faq="about">
+            <div class="faq-accordion">
+              <button class="faq-accordion-btn">Что такое Velvet?<span class="faq-arrow"></span></button>
+              <div class="faq-accordion-content">Velvet — это мультифункциональное приложение для городской логистики, которое объединяет в себе экспресс-доставку, грузоперевозки, вызов эвакуатора и спецтехники. Это единая платформа для решения любых задач, связанных с перевозками, от посылки до крупногабаритного груза.</div>
+            </div>
+            <div class="faq-accordion">
+              <button class="faq-accordion-btn">На каком этапе находится проект?<span class="faq-arrow"></span></button>
+              <div class="faq-accordion-content">Разработка приложения полностью завершена, и инфраструктура запущена. Velvet готов к выходу на рынок. Текущие инвестиции привлекаются для масштабной маркетинговой кампании и активного масштабирования нашего сервиса.</div>
+            </div>
+            <div class="faq-accordion">
+              <button class="faq-accordion-btn">Какую проблему решает Velvet?<span class="faq-arrow"></span></button>
+              <div class="faq-accordion-content">Мы устраняем необходимость искать разных подрядчиков для разных задач. Velvet — это универсальный сервис, который позволяет быстро и удобно заказывать самые разные услуги, от курьера до спецтехники, обеспечивая прозрачное ценообразование и надежность.</div>
+            </div>
+          </div>
+          <!-- Инвестиции -->
+          <div class="faq-accordion-panel" data-faq="invest" style="display:none;">
+            <div class="faq-accordion">
+              <button class="faq-accordion-btn">Почему стоит инвестировать в Velvet?<span class="faq-arrow"></span></button>
+              <div class="faq-accordion-content">Инвестирование в Velvet — это возможность стать частью перспективного и быстрорастущего рынка, с уникальным предложением "все в одном". Наш проект не на этапе идеи, а на пороге запуска, что минимизирует риски. Нам нужна ваша поддержка, чтобы быстро занять свою нишу на рынке.</div>
+            </div>
+            <div class="faq-accordion">
+              <button class="faq-accordion-btn">Какой минимальный порог входа для инвесторов?<span class="faq-arrow"></span></button>
+              <div class="faq-accordion-content">Мы принимаем инвестиции от 150 евро. Это сделано для того, чтобы каждый желающий мог стать нашим партнером и внести свой вклад в развитие проекта.</div>
+            </div>
+            <div class="faq-accordion">
+              <button class="faq-accordion-btn">Каким образом я могу стать инвестором?<span class="faq-arrow"></span></button>
+              <div class="faq-accordion-content">Чтобы стать инвестором, вам необходимо...</div>
+            </div>
+            <div class="faq-accordion">
+              <button class="faq-accordion-btn">Какую долю в компании я получу?<span class="faq-arrow"></span></button>
+              <div class="faq-accordion-content">Размер вашей доли напрямую зависит от суммы инвестиций. Детальную информацию о распределении долей вы найдете в нашем инвестиционном договоре.</div>
+            </div>
+          </div>
+          <!-- Финансы -->
+          <div class="faq-accordion-panel" data-faq="finance" style="display:none;">
+            <div class="faq-accordion">
+              <button class="faq-accordion-btn">Какова бизнес-модель Velvet?<span class="faq-arrow"></span></button>
+              <div class="faq-accordion-content">Наша основная бизнес-модель основана на комиссии с каждого заказа, который оформляется через приложение, независимо от типа услуги. Это обеспечивает стабильный и масштабируемый источник дохода.</div>
+            </div>
+            <div class="faq-accordion">
+              <button class="faq-accordion-btn">Какой доход я могу ожидать от своих инвестиций?<span class="faq-arrow"></span></button>
+              <div class="faq-accordion-content">Прогнозная выручка и комиссия, представленные на этой странице, показывают потенциал проекта. Однако важно понимать, что это ориентировочные цифры, и фактические результаты могут отличаться.</div>
+            </div>
+            <div class="faq-accordion">
+              <button class="faq-accordion-btn">Когда я получу возврат инвестиций?<span class="faq-arrow"></span></button>
+              <div class="faq-accordion-content">Мы планируем возврат инвестиций и прибыль в среднесрочной перспективе через 3-5 лет. Более детально условия возврата и выплаты прибыли будут прописаны в инвестиционном соглашении.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    document.querySelectorAll('.faq-category').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.faq-category').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const faq = this.getAttribute('data-faq');
+        document.querySelectorAll('.faq-accordion-panel').forEach(panel => {
+          panel.style.display = panel.getAttribute('data-faq') === faq ? '' : 'none';
+        });
+      });
+    });
+    document.querySelectorAll('.faq-accordion-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const isOpen = this.classList.contains('open');
+        
+        // Закрываем все аккордеоны
+        document.querySelectorAll('.faq-accordion-btn').forEach(b => b.classList.remove('open'));
+        document.querySelectorAll('.faq-accordion-content').forEach(c => {
+          c.style.maxHeight = null;
+          c.style.opacity = '0';
+          c.style.visibility = 'hidden';
+        });
+        
+        // Открываем текущий, если он был закрыт
+        if (!isOpen) {
+          this.classList.add('open');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+          content.style.visibility = 'visible';
+        }
+      });
+    });
+    </script>
+</body>
+</html>
