@@ -922,18 +922,31 @@ margin-bottom: 5px;
 }
 
 .menu-section-title {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 1000;
     color: #888;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    padding: 0 8px;
+    margin-top: 8px;
+    padding-left: 16px;
 }
 
 .menu-items {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin-bottom: 24px;
+}
+
+.menu-items-container {
+    background: #f6f6f3;
+    border-radius: 16px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     margin-bottom: 24px;
 }
 
@@ -949,7 +962,14 @@ margin-bottom: 5px;
 }
 
 .menu-item:hover {
-    background: #f6f6f3;
+    background: #e9ecef;
+}
+
+.menu-item-divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 4px 16px;
+    width: calc(100% - 32px);
 }
 
 .menu-item-icon {
@@ -980,6 +1000,11 @@ margin-bottom: 5px;
     font-size: 14px;
     color: #888;
     transition: transform 0.2s;
+    opacity: 0.6;
+}
+
+.menu-item-arrow-down {
+    transform: rotate(90deg);
 }
 
 .menu-app-section {
@@ -1073,7 +1098,7 @@ margin-bottom: 5px;
 }
 
 .menu-accordion-btn.open .menu-item-arrow {
-    transform: rotate(180deg);
+    transform: rotate(270deg);
 }
 
 .menu-accordion-content {
@@ -1130,10 +1155,23 @@ margin-bottom: 5px;
     .menu-section-title {
         font-size: 12px;
         margin-bottom: 12px;
+        padding: 0 6px;
+        margin-top: 6px;
+        padding-left: 12px;
     }
     
     .menu-item {
         padding: 10px 12px;
+    }
+    
+    .menu-items-container {
+        padding: 6px;
+        border-radius: 12px;
+    }
+    
+    .menu-item-divider {
+        margin: 4px 12px;
+        width: calc(100% - 24px);
     }
     
     .menu-item-text {
