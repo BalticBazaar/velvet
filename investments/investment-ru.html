@@ -21,20 +21,112 @@
     <div class="floating-block top-bar-block">
     <header class="top-bar">
             <div class="bar-inner">
-                <div class="logo"><img src="Velvet.png" alt="Velvet Logo" style="height:120px;vertical-align:middle;margin-top:6px;"><span class="accent" style="display:none;">Site</span></div>
+                <div class="logo"><a href="../index-ru.html"><img src="Velvet.png" alt="Velvet Logo" style="height:120px;vertical-align:middle;margin-top:6px;"></a><span class="accent" style="display:none;">Site</span></div>
             <nav class="bar-actions">
                 <a href="#" class="action-btn">Стать партнёром</a>
                     <button class="burger" aria-label="Открыть меню">
-                      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg class="burger-icon" width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="6" width="32" height="4" rx="2" fill="#000"/>
                         <rect y="14" width="32" height="4" rx="2" fill="#000"/>
                         <rect y="22" width="32" height="4" rx="2" fill="#000"/>
                       </svg>
-                    </button>
+                       <img class="close-icon" src="https://static.thenounproject.com/png/1292416-512.png" alt="Close menu" width="20" height="20" style="display:none;">
+                     </button>
             </nav>
         </div>
     </header>
+    
+    <!-- Выпадающее меню-аккордеон -->
+    <div class="dropdown-menu" id="dropdown-menu" style="display: none;">
+        <div class="menu-content">
+            <div class="menu-column">
+                <h3 class="menu-section-title">Для всех</h3>
+                <div class="menu-items">
+                    <a href="#" class="menu-item">
+                        <span class="menu-item-icon">+</span>
+                        <div class="menu-item-content">
+                            <span class="menu-item-text">Заказать доставку</span>
+                        </div>
+                        <span class="menu-item-arrow">></span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span class="menu-item-icon">📋</span>
+                        <div class="menu-item-content">
+                            <span class="menu-item-text">Отследить заказ</span>
+                        </div>
+                        <span class="menu-item-arrow">></span>
+                    </a>
+                </div>
+                
+                <div class="menu-app-section">
+                    <h4 class="menu-app-title">Приложение Velvet</h4>
+                    <p class="menu-app-subtitle">Приложение всегда под рукой</p>
+                    <div class="menu-app-buttons">
+                        <a href="#" class="menu-app-btn">
+                            <span class="app-icon">🍎</span>
+                            <span class="app-text">Загрузите в App Store</span>
+                        </a>
+                        <a href="#" class="menu-app-btn">
+                            <span class="app-icon">▶️</span>
+                            <span class="app-text">ДОСТУПНО в Google Play</span>
+                        </a>
+                    </div>
+                    <div class="menu-qr">
+                        <div class="qr-code">QR</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-column">
+                <h3 class="menu-section-title">Для бизнеса</h3>
+                <div class="menu-items">
+                    <a href="#" class="menu-item">
+                        <div class="menu-item-content">
+                            <span class="menu-item-text">Войти в кабинет</span>
+                            <span class="menu-item-subtitle">Регистрация и вход</span>
+                        </div>
+                        <span class="menu-item-arrow">></span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <div class="menu-item-content">
+                            <span class="menu-item-text">Решения для бизнеса</span>
+                        </div>
+                        <span class="menu-item-arrow">></span>
+                    </a>
+                    <div class="menu-accordion-item">
+                        <button class="menu-accordion-btn">
+                            <div class="menu-item-content">
+                                <span class="menu-item-text">Интеграция</span>
+                                <span class="menu-item-subtitle">Документация и возможности</span>
+                            </div>
+                            <span class="menu-item-arrow">v</span>
+                        </button>
+                        <div class="menu-accordion-content">
+                            <a href="#" class="menu-sub-item">API документация</a>
+                            <a href="#" class="menu-sub-item">Webhook настройки</a>
+                            <a href="#" class="menu-sub-item">SDK для разработчиков</a>
+                        </div>
+                    </div>
+                    <div class="menu-accordion-item">
+                        <button class="menu-accordion-btn">
+                            <div class="menu-item-content">
+                                <span class="menu-item-text">Услуги</span>
+                            </div>
+                            <span class="menu-item-arrow">v</span>
+                        </button>
+                        <div class="menu-accordion-content">
+                            <a href="#" class="menu-sub-item">Курьерская доставка</a>
+                            <a href="#" class="menu-sub-item">Грузоперевозки</a>
+                            <a href="#" class="menu-sub-item">Эвакуатор</a>
+                            <a href="#" class="menu-sub-item">Спецтехника</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    </div>
+    <div class="site-overlay" id="site-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:900;"></div>
     <script>
     // Sticky TopBar shadow on scroll
     window.addEventListener('scroll', function() {
@@ -45,6 +137,86 @@
       } else {
         topBar.classList.remove('scrolled');
       }
+    });
+    </script>
+
+    <script>
+    // Функциональность выпадающего меню
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const burgerBtn = document.querySelector('.burger');
+    const menuAccordionBtns = document.querySelectorAll('.menu-accordion-btn');
+    const burgerIcon = document.querySelector('.burger-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const siteOverlay = document.getElementById('site-overlay');
+
+    // Открытие/закрытие меню при клике на бургер
+    burgerBtn.addEventListener('click', function() {
+        const isOpen = dropdownMenu.style.display === 'block';
+        
+        if (isOpen) {
+            // Закрываем меню
+            dropdownMenu.style.display = 'none';
+            burgerBtn.classList.remove('active');
+            burgerIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+            siteOverlay.style.display = 'none';
+        } else {
+            // Открываем меню
+            dropdownMenu.style.display = 'block';
+            burgerBtn.classList.add('active');
+            siteOverlay.style.display = 'block';
+            burgerIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        }
+    });
+
+    // Закрытие меню при клике вне его области
+    document.addEventListener('click', function(e) {
+        if (!burgerBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.style.display = 'none';
+            burgerBtn.classList.remove('active');
+            burgerIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+            siteOverlay.style.display = 'none';
+        }
+    });
+
+    // Закрытие меню при нажатии Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && dropdownMenu.style.display === 'block') {
+            dropdownMenu.style.display = 'none';
+            burgerBtn.classList.remove('active');
+            burgerIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+            siteOverlay.style.display = 'none';
+        }
+    });
+
+    // Закрытие меню при клике на оверлей
+    siteOverlay.addEventListener('click', function() {
+        dropdownMenu.style.display = 'none';
+        burgerBtn.classList.remove('active');
+        siteOverlay.style.display = 'none';
+    });
+
+    // Функциональность аккордеона в меню
+    menuAccordionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const isOpen = this.classList.contains('open');
+            
+            // Закрываем все аккордеоны в меню
+            menuAccordionBtns.forEach(b => b.classList.remove('open'));
+            document.querySelectorAll('.menu-accordion-content').forEach(c => {
+                c.style.maxHeight = null;
+            });
+            
+            // Открываем текущий, если он был закрыт
+            if (!isOpen) {
+                this.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
     });
     </script>
 
