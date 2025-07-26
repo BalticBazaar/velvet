@@ -44,7 +44,7 @@
                     <div class="menu-items-container">
                         <h3 class="menu-section-title">Для всех</h3>
                         <a href="#" class="menu-item">
-                            <span class="menu-item-icon">🏠</span>
+                            <img src="https://www.svgrepo.com/show/22031/home-icon-silhouette.svg" alt="🏠" class="menu-item-icon" width="16" height="16">
                             <div class="menu-item-content">
                                 <span class="menu-item-text">Главная страница</span>
                             </div>
@@ -52,15 +52,7 @@
                         </a>
                         <div class="menu-item-divider"></div>
                         <a href="#" class="menu-item">
-                            <span class="menu-item-icon">🚀</span>
-                            <div class="menu-item-content">
-                                <span class="menu-item-text">Начать карьеру</span>
-                            </div>
-                            <img src="https://static.thenounproject.com/png/right-arrow-icon-74838-512.png" alt=">" class="menu-item-arrow" width="16" height="16">
-                        </a>
-                        <div class="menu-item-divider"></div>
-                        <a href="#" class="menu-item">
-                            <span class="menu-item-icon">💰</span>
+                            <img src="https://www.svgrepo.com/show/453350/group.svg" alt="💰" class="menu-item-icon" width="16" height="16">
                             <div class="menu-item-content">
                                 <span class="menu-item-text">Стать инвестором</span>
                             </div>
@@ -69,70 +61,16 @@
                     </div>
                 </div>
                 
-                <div class="menu-app-section">
-                    <h4 class="menu-app-title">Приложение Velvet</h4>
-                    <p class="menu-app-subtitle">Приложение всегда под рукой</p>
-                    <div class="menu-app-buttons">
-                        <a href="#" class="menu-app-btn">
-                            <span class="app-icon">🍎</span>
-                            <span class="app-text">Загрузите в App Store</span>
-                        </a>
-                        <a href="#" class="menu-app-btn">
-                            <span class="app-icon">▶️</span>
-                            <span class="app-text">ДОСТУПНО в Google Play</span>
-                        </a>
-                    </div>
-                    <div class="menu-qr">
-                        <div class="qr-code">QR</div>
-                    </div>
-                </div>
             </div>
             
             <div class="menu-column">
                 <div class="menu-items">
                     <div class="menu-items-container">
-                        <h3 class="menu-section-title">Для бизнеса</h3>
-                        <a href="#" class="menu-item">
-                            <div class="menu-item-content">
-                                <span class="menu-item-text">Войти в кабинет</span>
-                                <span class="menu-item-subtitle">Регистрация и вход</span>
-                            </div>
-                            <img src="https://static.thenounproject.com/png/right-arrow-icon-74838-512.png" alt=">" class="menu-item-arrow" width="16" height="16">
+                        <h3 class="menu-section-title">Приложение Velvet</h3>
+                        <a href="#" class="menu-app-btn" onclick="event.preventDefault(); return false;">
+                            <img src="https://www.svgrepo.com/show/521888/time.svg" alt="⏰" class="app-icon" width="16" height="16">
+                            <span class="app-text">Скоро будет доступно</span>
                         </a>
-                        <a href="#" class="menu-item">
-                            <div class="menu-item-content">
-                                <span class="menu-item-text">Решения для бизнеса</span>
-                            </div>
-                            <img src="https://static.thenounproject.com/png/right-arrow-icon-74838-512.png" alt=">" class="menu-item-arrow" width="16" height="16">
-                        </a>
-                        <div class="menu-accordion-item">
-                            <button class="menu-accordion-btn">
-                                <div class="menu-item-content">
-                                    <span class="menu-item-text">Интеграция</span>
-                                    <span class="menu-item-subtitle">Документация и возможности</span>
-                                </div>
-                                <img src="https://static.thenounproject.com/png/right-arrow-icon-74838-512.png" alt="v" class="menu-item-arrow menu-item-arrow-down" width="16" height="16">
-                            </button>
-                            <div class="menu-accordion-content">
-                                <a href="#" class="menu-sub-item">API документация</a>
-                                <a href="#" class="menu-sub-item">Webhook настройки</a>
-                                <a href="#" class="menu-sub-item">SDK для разработчиков</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-accordion-item">
-                        <button class="menu-accordion-btn">
-                            <div class="menu-item-content">
-                                <span class="menu-item-text">Услуги</span>
-                            </div>
-                            <img src="https://static.thenounproject.com/png/right-arrow-icon-74838-512.png" alt="v" class="menu-item-arrow menu-item-arrow-down" width="16" height="16">
-                        </button>
-                        <div class="menu-accordion-content">
-                            <a href="#" class="menu-sub-item">Курьерская доставка</a>
-                            <a href="#" class="menu-sub-item">Грузоперевозки</a>
-                            <a href="#" class="menu-sub-item">Эвакуатор</a>
-                            <a href="#" class="menu-sub-item">Спецтехника</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -518,5 +456,31 @@ document.querySelectorAll('a[href^="#legal"]').forEach(function(link) {
       });
     });
     </script>
+
+    <!-- Shaft section (footer) -->
+    <div class="floating-block shaft-block">
+        <div class="shaft-inner">
+            <div class="shaft-left">
+                <div class="shaft-logo">
+                    <img src="Velvet-w.png" alt="Velvet Logo" style="height: 80px; vertical-align: middle;">
+                </div>
+                <div class="shaft-categories">
+                    <a href="../index-ru.html" class="shaft-category">
+                        <span>Главная</span>
+                    </a>
+                    <a href="#legal" class="shaft-category">
+                        <span>Инвестировать</span>
+                    </a>
+                </div>
+            </div>
+            <div class="shaft-right">
+                <div class="shaft-info">
+                    <p>Velvet Delivery — информационный сервис.</p>
+                    <p>Транспортные и иные услуги оказываются партнёрами сервиса.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
