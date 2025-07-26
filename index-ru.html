@@ -4,24 +4,480 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velvet - Главная страница</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="investments/styles.css">
+    <style>
+@media (max-width: 700px) {
+  .logo img {
+    height: 80px !important;
+  }
+  .promo-block .promo-image img {
+    max-width: 140px !important;
+    width: 67% !important;
+  }
+  .promo-block .promo-inner {
+    align-items: flex-start !important;
+  }
+  .promo-block .promo-image {
+    margin-left: 16px !important;
+    align-self: flex-start !important;
+  }
+  .promo-block .promo-text h2 {
+    font-size: 24px !important;
+  }
+  .features-block .features-title {
+    margin-bottom: 24px !important;
+  }
+  .hero-card {
+    padding-left: 16px !important;
+  }
+  .features-title {
+    padding-left: 16px !important;
+  }
+  .feature-text {
+    padding-left: 16px !important;
+  }
+  .promo-text {
+    padding-left: 16px !important;
+  }
+  .promo-text p {
+    font-size: 14px !important;
+  }
+}
+</style>
 </head>
 <body>
-    <header>
-        <img src="investments/Velvet.png" alt="Логотип Velvet" style="height:60px;">
-        <nav>
-            <a href="index.html">Latviešu</a> |
-            <a href="index-ru.html">Русский</a> |
-            <a href="index-en.html">English</a>
+    <!-- Top navigation bar -->
+    <div class="floating-block top-bar-block">
+    <header class="top-bar">
+            <div class="bar-inner">
+                <div class="logo"><a href="index-ru.html"><img src="Velvet.png" alt="Velvet Logo" style="height:120px;vertical-align:middle;margin-top:6px;"></a><span class="accent" style="display:none;">Site</span></div>
+            <nav class="bar-actions">
+                <a href="investments/investment-ru.html" class="action-btn">Стать партнёром</a>
+                <div class="topbar-language-dropdown">
+                    <button class="topbar-language-current" onclick="toggleTopbarLanguageDropdown()">
+                        <img src="https://www.svgrepo.com/show/401732/flag-for-russia.svg" alt="🇷🇺" class="topbar-language-flag" width="16" height="12">
+                        <span class="topbar-language-text">RU</span>
+                        <svg class="topbar-language-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="topbar-language-options" id="topbar-language-options">
+                        <a href="index-ru.html" class="topbar-language-option active">
+                            <img src="https://www.svgrepo.com/show/401732/flag-for-russia.svg" alt="🇷🇺" class="topbar-language-flag" width="16" height="12">
+                            RU
+                        </a>
+                        <a href="index.html" class="topbar-language-option">
+                            <img src="https://www.svgrepo.com/show/401672/flag-for-latvia.svg" alt="🇱🇻" class="topbar-language-flag" width="16" height="12">
+                            LV
+                        </a>
+                        <a href="index-en.html" class="topbar-language-option">
+                            <img src="https://www.svgrepo.com/show/401791/flag-for-united-states.svg" alt="🇺🇸" class="topbar-language-flag" width="16" height="12">
+                            EN
+                        </a>
+                    </div>
+                </div>
+                    <button class="burger" aria-label="Открыть меню">
+                      <svg class="burger-icon" width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="6" width="32" height="4" rx="2" fill="#000"/>
+                        <rect y="14" width="32" height="4" rx="2" fill="#000"/>
+                        <rect y="22" width="32" height="4" rx="2" fill="#000"/>
+                      </svg>
+                       <img class="close-icon" src="https://static.thenounproject.com/png/1292416-512.png" alt="Close menu" width="20" height="20" style="display:none;">
+                     </button>
         </nav>
+        </div>
     </header>
-    <main>
-        <h1>Добро пожаловать в Velvet!</h1>
-        <p>Velvet — ваш надежный партнер в мире инвестиций.</p>
-        <img src="investments/invest-banner.png" alt="Инвестиционный баннер" style="max-width:100%;height:auto;">
-    </main>
-    <footer>
-        <p>&copy; 2024 Velvet. Все права защищены.</p>
-    </footer>
+    
+    <!-- Выпадающее меню-аккордеон -->
+    <div class="dropdown-menu" id="dropdown-menu" style="display: none;">
+        <div class="menu-content">
+            <div class="menu-column">
+                <div class="menu-items">
+                    <div class="menu-items-container">
+                        <h3 class="menu-section-title">Для всех</h3>
+                        <a href="index-ru.html" class="menu-item">
+                            <img src="https://www.svgrepo.com/show/22031/home-icon-silhouette.svg" alt="🏠" class="menu-item-icon" width="16" height="16">
+                            <div class="menu-item-content">
+                                <span class="menu-item-text">Главная страница</span>
+                            </div>
+                            <img src="https://static.thenounproject.com/png/right-arrow-icon-74838-512.png" alt=">" class="menu-item-arrow" width="16" height="16">
+                        </a>
+                        <div class="menu-item-divider"></div>
+                        <a href="investments/investment-ru.html" class="menu-item">
+                            <img src="https://www.svgrepo.com/show/453350/group.svg" alt="💰" class="menu-item-icon" width="16" height="16">
+                            <div class="menu-item-content">
+                                <span class="menu-item-text">Стать инвестором</span>
+                            </div>
+                            <img src="https://static.thenounproject.com/png/right-arrow-icon-74838-512.png" alt=">" class="menu-item-arrow" width="16" height="16">
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="menu-column">
+                <div class="menu-items">
+                    <div class="menu-items-container">
+                        <h3 class="menu-section-title">Приложение Velvet</h3>
+                        <a href="#" class="menu-app-btn" onclick="event.preventDefault(); return false;">
+                            <img src="https://www.svgrepo.com/show/521888/time.svg" alt="⏰" class="app-icon" width="16" height="16">
+                            <span class="app-text">Скоро будет доступно</span>
+                        </a>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="site-overlay" id="site-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:900;"></div>
+    <script>
+    // Sticky TopBar shadow on scroll
+    window.addEventListener('scroll', function() {
+      var topBar = document.querySelector('.floating-block.top-bar-block');
+      if (!topBar) return;
+      if (window.scrollY > 10) {
+        topBar.classList.add('scrolled');
+      } else {
+        topBar.classList.remove('scrolled');
+      }
+    });
+    </script>
+
+    <script>
+    // Функциональность выпадающего меню
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const burgerBtn = document.querySelector('.burger');
+    const menuAccordionBtns = document.querySelectorAll('.menu-accordion-btn');
+    const burgerIcon = document.querySelector('.burger-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const siteOverlay = document.getElementById('site-overlay');
+
+    // Открытие/закрытие меню при клике на бургер
+    burgerBtn.addEventListener('click', function() {
+        const isOpen = dropdownMenu.style.display === 'block';
+        
+        if (isOpen) {
+            // Закрываем меню
+            dropdownMenu.style.display = 'none';
+            burgerBtn.classList.remove('active');
+            burgerIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+            siteOverlay.style.display = 'none';
+        } else {
+            // Открываем меню
+            dropdownMenu.style.display = 'block';
+            burgerBtn.classList.add('active');
+            siteOverlay.style.display = 'block';
+            burgerIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        }
+    });
+
+    // Закрытие меню при клике вне его области
+    document.addEventListener('click', function(e) {
+        if (!burgerBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.style.display = 'none';
+            burgerBtn.classList.remove('active');
+            burgerIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+            siteOverlay.style.display = 'none';
+        }
+    });
+
+    // Закрытие меню при нажатии Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && dropdownMenu.style.display === 'block') {
+            dropdownMenu.style.display = 'none';
+            burgerBtn.classList.remove('active');
+            burgerIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+            siteOverlay.style.display = 'none';
+        }
+    });
+
+    // Закрытие меню при клике на оверлей
+    siteOverlay.addEventListener('click', function() {
+        dropdownMenu.style.display = 'none';
+        burgerBtn.classList.remove('active');
+        siteOverlay.style.display = 'none';
+    });
+
+    // Функциональность аккордеона в меню
+    menuAccordionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const isOpen = this.classList.contains('open');
+            
+            // Закрываем все аккордеоны в меню
+            menuAccordionBtns.forEach(b => b.classList.remove('open'));
+            document.querySelectorAll('.menu-accordion-content').forEach(c => {
+                c.style.maxHeight = null;
+            });
+            
+            // Открываем текущий, если он был закрыт
+            if (!isOpen) {
+                this.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
+    });
+
+    // Функциональность выпадающего списка языков
+    function toggleLanguageDropdown() {
+        const dropdown = document.querySelector('.menu-language-dropdown');
+        const isOpen = dropdown.classList.contains('open');
+        
+        // Закрываем все другие выпадающие списки
+        document.querySelectorAll('.menu-language-dropdown').forEach(d => d.classList.remove('open'));
+        
+        // Открываем текущий, если он был закрыт
+        if (!isOpen) {
+            dropdown.classList.add('open');
+        }
+    }
+
+    // Закрытие выпадающего списка при клике вне его
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.menu-language-dropdown')) {
+            document.querySelectorAll('.menu-language-dropdown').forEach(d => d.classList.remove('open'));
+        }
+    });
+
+    // Функциональность выпадающего списка языков в Top Bar
+    function toggleTopbarLanguageDropdown() {
+        const dropdown = document.querySelector('.topbar-language-dropdown');
+        const isOpen = dropdown.classList.contains('open');
+        
+        // Закрываем все другие выпадающие списки
+        document.querySelectorAll('.topbar-language-dropdown').forEach(d => d.classList.remove('open'));
+        
+        // Открываем текущий, если он был закрыт
+        if (!isOpen) {
+            dropdown.classList.add('open');
+        }
+    }
+
+    // Закрытие Top Bar выпадающего списка при клике вне его
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.topbar-language-dropdown')) {
+            document.querySelectorAll('.topbar-language-dropdown').forEach(d => d.classList.remove('open'));
+        }
+    });
+    </script>
+
+    <!-- Hero section -->
+    <div class="floating-block hero-block">
+        <div class="hero-bg">
+            <img src="velvet-banner.webp" alt="Velvet illustration">
+        </div>
+        <div class="hero-card">
+            <h1>Добро пожаловать в<br>Velvet</h1>
+            <p>Мультифункциональное приложение для городской логистики</p>
+            <p>Узнайте больше о нашем проекте и возможностях инвестирования</p>
+            <a href="investments/investment-ru.html" class="primary-btn">Узнать больше
+                <span class="btn-arrow" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M7 11H15M15 11L12 8M15 11L12 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+            </a>
+            <div class="chips">
+                                        <a href="#features" class="chip">Возможности</a>
+                        <a href="#about" class="chip">О проекте</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Возможности -->
+    <div class="floating-block features-block" id="features">
+        <h2 class="features-title">Возможности приложения</h2>
+        <div class="features-list">
+            <div class="feature-card">
+                <span class="feature-icon">
+                    <img src="https://www.svgrepo.com/show/480999/delivery.svg" alt="🚚" width="28" height="28" style="filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(1000%) hue-rotate(270deg) brightness(50%) contrast(100%);">
+                </span>
+                <div class="feature-text">
+                    <div class="feature-title">Экспресс-доставка</div>
+                    <div class="feature-desc">Быстрая доставка документов, посылок и небольших грузов по городу в кратчайшие сроки.</div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">
+                    <img src="https://www.svgrepo.com/show/521523/box.svg" alt="📦" width="28" height="28" style="filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(1000%) hue-rotate(270deg) brightness(50%) contrast(100%);">
+                </span>
+                <div class="feature-text">
+                    <div class="feature-title">Грузоперевозки</div>
+                    <div class="feature-desc">Перевозка крупногабаритных грузов, мебели и строительных материалов с профессиональными грузчиками.</div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">
+                    <img src="https://www.svgrepo.com/show/490071/crane.svg" alt="🏗️" width="28" height="28" style="filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(1000%) hue-rotate(270deg) brightness(50%) contrast(100%);">
+                </span>
+                <div class="feature-text">
+                    <div class="feature-title">Эвакуатор и спецтехника</div>
+                    <div class="feature-desc">Вызов эвакуатора для автомобилей и заказ спецтехники для различных задач.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Промо-блок -->
+    <div class="floating-block promo-block">
+        <div class="promo-inner">
+            <div class="promo-text">
+                <h2>Нужно срочно доставить посылку или документы?</h2>
+                <p>Наши курьеры быстро и бережно доставят вашу посылку до двери, а вы можете отслеживать доставку в режиме реального времени.</p>
+            </div>
+            <div class="promo-image">
+                <img src="https://www.svgrepo.com/show/480999/delivery.svg" alt="🚚" style="max-width: 210px; width: 100%; filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(1000%) hue-rotate(270deg) brightness(50%) contrast(100%);">
+            </div>
+        </div>
+    </div>
+
+    <!-- О проекте -->
+    <div class="floating-block features-block" id="about">
+        <h2 class="features-title">О проекте Velvet</h2>
+        <div class="features-list">
+            <div class="feature-card">
+                <span class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#fff"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#8B008B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="feature-text">
+                    <div class="feature-title">Единая платформа</div>
+                    <div class="feature-desc">Velvet объединяет в себе экспресс-доставку, грузоперевозки, вызов эвакуатора и спецтехники в одном приложении.</div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#fff"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#8B008B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="feature-text">
+                    <div class="feature-title">Готов к запуску</div>
+                    <div class="feature-desc">Разработка приложения полностью завершена, инфраструктура запущена. Проект готов к масштабному выходу на рынок.</div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="14" fill="#fff"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#8B008B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="feature-text">
+                    <div class="feature-title">Инвестиционные возможности</div>
+                    <div class="feature-desc">Откройте для себя возможность стать партнером перспективного проекта с минимальными инвестициями от 150 €.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Промо-блок грузоперевозки -->
+    <div class="floating-block promo-block">
+        <div class="promo-inner">
+            <div class="promo-text">
+                <h2>Возите диваны, кровати и диваны-кровати на грузовом такси</h2>
+                <p>А грузчики помогут всё это вынести и занести на нужный этаж</p>
+            </div>
+            <div class="promo-image">
+                <img src="https://www.svgrepo.com/show/521523/box.svg" alt="📦" style="max-width: 210px; width: 100%; filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(1000%) hue-rotate(270deg) brightness(50%) contrast(100%);">
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок преимуществ -->
+    <div class="floating-block features-block">
+        <h2 class="features-title">Преимущества</h2>
+        <div class="features-list">
+            <div class="feature-card">
+                <span class="feature-icon">
+                    <img src="https://www.svgrepo.com/show/438876/success.svg" alt="✅" width="28" height="28" style="filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(1000%) hue-rotate(270deg) brightness(50%) contrast(100%);">
+                </span>
+                <div class="feature-text">
+                    <div class="feature-title">Удобство</div>
+                    <div class="feature-desc">Всё необходимое в одном приложении</div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">
+                    <img src="https://www.svgrepo.com/show/522682/time.svg" alt="⏰" width="28" height="28" style="filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(1000%) hue-rotate(270deg) brightness(50%) contrast(100%);">
+                </span>
+                <div class="feature-text">
+                    <div class="feature-title">Скорость</div>
+                    <div class="feature-desc">Быстрый вызов и оперативное исполнение</div>
+                </div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">
+                    <img src="https://www.svgrepo.com/show/532323/lock-alt.svg" alt="🔒" width="28" height="28" style="filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(1000%) hue-rotate(270deg) brightness(50%) contrast(100%);">
+                </span>
+                <div class="feature-text">
+                    <div class="feature-title">Надёжность</div>
+                    <div class="feature-desc">Проверенные партнёры и безопасные сделки</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Промо-блок спецтехника -->
+    <div class="floating-block promo-block">
+        <div class="promo-inner">
+            <div class="promo-text">
+                <h2>Нужна спецтехника для строительных или земляных работ?</h2>
+                <p>Арендуйте краны, экскаваторы и самосвалы с опытными операторами. Вся техника исправна и готова к работе.</p>
+            </div>
+            <div class="promo-image">
+                <img src="https://www.svgrepo.com/show/490071/crane.svg" alt="🏗️" style="max-width: 210px; width: 100%; filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(1000%) hue-rotate(270deg) brightness(50%) contrast(100%);">
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.querySelectorAll('a[href^="#about"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.getElementById('about');
+            if (target) {
+                var y = target.getBoundingClientRect().top + window.pageYOffset - 100;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        });
+    });
+    document.querySelectorAll('a[href^="#features"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.getElementById('features');
+            if (target) {
+                var y = target.getBoundingClientRect().top + window.pageYOffset - 100;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        });
+    });
+    </script>
+
+    <!-- Shaft section (footer) -->
+    <div class="floating-block shaft-block">
+        <div class="shaft-inner">
+            <div class="shaft-left">
+                <div class="shaft-logo">
+                    <img src="investments/Velvet-w.png" alt="Velvet Logo" style="height: 80px; vertical-align: middle;">
+                </div>
+                <div class="shaft-categories">
+                    <a href="index-ru.html" class="shaft-category">
+                        <span>Главная</span>
+                    </a>
+                    <a href="investments/investment-ru.html" class="shaft-category">
+                        <span>Инвестировать</span>
+                    </a>
+                </div>
+            </div>
+            <div class="shaft-right">
+                <div class="shaft-info">
+                    <p>Velvet Delivery — информационный сервис.</p>
+                    <p>Транспортные и иные услуги оказываются партнёрами сервиса.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html> 
